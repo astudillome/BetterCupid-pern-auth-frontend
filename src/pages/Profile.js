@@ -27,12 +27,26 @@ const Profile = (props) => {
         setState(data.state);
         setAboutMe(data.about_me)
       }
+      // viewProfile()
     })
   }
 
   useEffect(() => {
     fetchProfile()
   }, []);
+ 
+  // console.log(props)
+
+  // const viewProfile = () => {
+  //   // extract the user id
+  //   ProfileModel.viewProfile(props.match.params.id).then({ 
+  //     // targetProfile
+  //   })
+  // }
+
+  // useEffect(() => {
+  //   viewProfile()
+  // }, []);
 
  
 
