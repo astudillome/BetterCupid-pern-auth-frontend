@@ -9,6 +9,8 @@ const ViewProfileInfo = (props) => {
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [geoState, setGeoState] = useState("");
+  const [image, setImage] = useState("");
+  const [aboutMe, setAboutMe] = useState("");
  
   // console.log(props)
 
@@ -17,9 +19,11 @@ const ViewProfileInfo = (props) => {
     ProfileModel.viewProfile(props.match.params.id).then((data) => { 
       console.log(data.profile)
       setDisplayName(data.profile.display_name);
-        setAge(data.profile.age);
-        setCity(data.profile.city);
-        setGeoState(data.profile.state);
+      setAge(data.profile.age);
+      setCity(data.profile.city);
+      setGeoState(data.profile.state);
+      setImage(data.profile.image);
+      setAboutMe(data.profile.about_me);
     })
   }
 
@@ -31,8 +35,9 @@ const ViewProfileInfo = (props) => {
   return (
     <div className="profile-container">
       <ViewProfile displayName={ displayName } age={ age } city={ city } 
-      state={ geoState } currentUser={ props.currentUser } targetProfile={ props.match.params.id } />
-      <AboutMe />
+      state={ geoState } image={ image } currentUser={ props.currentUser } 
+      targetProfile={ props.match.params.id } viewProfile={ viewProfile } />
+      <AboutMe aboutMe={ aboutMe } />
     </div>
   )
 }
