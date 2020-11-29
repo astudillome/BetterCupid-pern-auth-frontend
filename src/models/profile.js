@@ -5,19 +5,16 @@ export default class ProfileModel {
     return fetch(`${REACT_APP_API_URL}/profile/browse`, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Content-Type": "application/json"
       },
-      credentials: "include",
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     }).then(res => res.json())
   }
   static getOwnProfile() {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Content-Type": "application/json"
       },
       credentials: "include"
     }).then(res => res.json())
@@ -27,8 +24,7 @@ export default class ProfileModel {
     return fetch(`${REACT_APP_API_URL}/profile/${userId}`, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Content-Type": "application/json"
       },
       credentials: "include"
     }).then(res => res.json())
@@ -38,10 +34,8 @@ export default class ProfileModel {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Content-Type": "application/json"
       },
-      credentials: "include",
       body: JSON.stringify(data)
     }).then(res => res.json())
   }
@@ -50,8 +44,7 @@ export default class ProfileModel {
     return fetch(`${REACT_APP_API_URL}/profile/${data.id}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Content-Type": "application/json"
       },
       credentials: "include",
       body: JSON.stringify(data)
@@ -61,8 +54,7 @@ export default class ProfileModel {
     return fetch(`${REACT_APP_API_URL}/profile`, {
       method: "DELETE",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Content-Type": "application/json"
       },
       credentials: "include",
       body: JSON.stringify(data)

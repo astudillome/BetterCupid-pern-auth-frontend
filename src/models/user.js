@@ -5,8 +5,7 @@ export default class UserModel {
     return fetch(`${REACT_APP_API_URL}/auth/register`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
     }).then(res => res.json())
@@ -18,7 +17,6 @@ export default class UserModel {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:4000/"
       },
       body: JSON.stringify(credentials),
       // auth headers - included with any request requiring authentication
