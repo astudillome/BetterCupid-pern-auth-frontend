@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
+        <div className="about-page">
             <h1>Who We Are</h1>
             <p>
                 BetterCupid was created to provide a neutral platform where people of all different 
