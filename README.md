@@ -18,36 +18,36 @@
 * As a user I can report negative interactions
 
 ## Wire Frames
-![Landing Page](BetterCupid-pern-auth-frontend/public/images/image.png)
+![Landing Page](public/images/image.png)
 
-![Sign Up Page](BetterCupid-pern-auth-frontend/public/images/image4.png)
+![Sign Up Page](public/images/image4.png)
 
-![Sign In Page](BetterCupid-pern-auth-frontend/public/images/image5.png)
+![Sign In Page](public/images/image5.png)
 
-![Profile Page](BetterCupid-pern-auth-frontend/public/images/image2.png)
+![Profile Page](public/images/image2.png)
 
-![Browse Page](BetterCupid-pern-auth-frontend/public/images/image1.png)
+![Browse Page](public/images/image1.png)
 
-![Matches Page](BetterCupid-pern-auth-frontend/public/images/image3.png)
-
-
+![Matches Page](public/images/image3.png)
 
 ## ERD
-![ERD](BetterCupid-pern-auth-frontend/public/images/ERD.png)
+![ERD](public/images/ERD.png)
 
 ## Code Snipets
-![code]()
+![code](public/images/code1.png)
 
-![code]()
+![code](public/images/code2.png)
 
-![code]()
+![code](public/images/code3.png)
 
 ## App
-![app]()
+![app](public/images/app3.png)
 
-![app]()
+![app](public/images/app2.png)
 
-![app]()
+![app](public/images/app1.png)
+
+![app](public/images/app4.png)
 
 ## Technology Utilized
 * React
