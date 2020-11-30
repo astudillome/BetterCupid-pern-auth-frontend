@@ -1,5 +1,4 @@
 const REACT_APP_API_URL = "http://localhost:4000/api/v1"
-
 export default class RelationshipModel {
   static likeUser(data, recipientId) {
     // console.log(data)
