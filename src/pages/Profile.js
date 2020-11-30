@@ -13,6 +13,7 @@ const Profile = (props) => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [aboutMe, setAboutMe] = useState("")
+  const [image, setImage] = useState("")
   
   // const [state, setState] = useState("");
 
@@ -26,6 +27,7 @@ const Profile = (props) => {
         setCity(data.city);
         setState(data.state);
         setAboutMe(data.about_me)
+        setImage(data.image)
       }
       // viewProfile()
     })
@@ -34,29 +36,11 @@ const Profile = (props) => {
   useEffect(() => {
     fetchProfile()
   }, []);
- 
-  // console.log(props)
 
-  // const viewProfile = () => {
-  //   // extract the user id
-  //   ProfileModel.viewProfile(props.match.params.id).then({ 
-  //     // targetProfile
-  //   })
-  // }
-
-  // useEffect(() => {
-  //   viewProfile()
-  // }, []);
-
- 
-
- 
-
- 
 console.log(displayName)
   return (
     <div className="profile-container">
-      <UserInfo displayName={displayName} age={age} city={city} state={state} />
+      <UserInfo displayName={displayName} age={age} city={city} state={state} image={image}/>
       <AboutMe aboutMe={aboutMe} />
     </div>
   )
