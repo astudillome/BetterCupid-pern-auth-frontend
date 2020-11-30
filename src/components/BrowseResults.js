@@ -1,20 +1,23 @@
 import React from 'react';
 import Browse from '../pages/Browse';
-import { Link } from 'react-router-dom'
-import Router from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Router from 'react-router-dom';
 
 const BrowseResults = (props) => {
   const useImage = () => {
-    if (props.image === null || props.image === undefined) {
-      return false;
-    } 
+    if (props.image === null || props.image === undefined || props.image === "") {
+      return false
+    } else {
       return true
+    }
   }
+
+  console.log(props.image)
 
   return (
     <div className="card flex-row flex-wrap user-info">
       <div className="card-header border-0">
-      {useImage()
+        {useImage()
           ? <img src={props.image} height='180px' width='180px' alt='image' />
           : <img src='https://i.imgur.com/4Zx85np.png' height='180px' width='180px' alt='user icon' />
         }

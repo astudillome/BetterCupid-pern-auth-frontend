@@ -1,21 +1,23 @@
-// NOTE: the next 2 lines MUST be kept separate to prevent a compiling error, because
-// if you import React in curly brackets it will return an error that says 
-// 'cannot read createElement of undefined'
 import React, { useState, useEffect } from 'react';
+import Profile from '../pages/Profile';
+import ViewProfile from '../pages/ViewProfile'
+import UserModel from '../models/user';
+import ProfileModel from '../models/profile';
 import RelationshipModel from '../models/relationship';
+
 const ViewProfileInfo = (props) => {
   const [isLiked, setIsLiked] = useState(false)
-  const [isImage, setIsImage] = useState(false)
   const recipientId = props.targetProfile
   const currentUser = props.currentUser
-  
+
   const getRelationship = () => {
     RelationshipModel.checkLikeStatus(
       { currentUser },
       recipientId
     )
-      .then(setIsLiked)
+    .then(setIsLiked)
   }
+
   useEffect(() => {
     getRelationship()
   }, [props.targetProfile])
@@ -25,7 +27,7 @@ const ViewProfileInfo = (props) => {
       RelationshipModel.unlikeUser(
         { currentUser },
         recipientId
-      ).then(() =>
+      ).then(() => 
         getRelationship()
       )
     } else {
@@ -38,11 +40,14 @@ const ViewProfileInfo = (props) => {
     }
   }
 
+  console.log(props.image)
+
   const useImage = () => {
-    if (props.image === null || props.image === undefined) {
-      return false;
-    } 
+    if (props.image === null || props.image === undefined || props.image === "") {
+      return false
+    } else {
       return true
+    }
   }
 
   return (
@@ -52,7 +57,6 @@ const ViewProfileInfo = (props) => {
           ? <img src={props.image} height='180px' width='180px' alt='image' />
           : <img src='https://i.imgur.com/4Zx85np.png' height='180px' width='180px' alt='user icon' />
         }
-
       </div>
       <div className="card-block info-card-text">
         {/* THIS IS HOW WE PASS PROPS */}
@@ -61,7 +65,7 @@ const ViewProfileInfo = (props) => {
           <p>{props.age}</p>
           <p>{props.city}, {props.state}</p>
         </div>
-        <a href="#" className="info-card-button" onClick={() => updateLikeStatus(props.currentUser)}>
+        <a href="#" className="info-card-button" onClick={() => updateLikeStatus(props.currentUser) }>
           {isLiked
             ? <img src='https://i.imgur.com/7LesXMV.png' height='20px' width='20px' alt='heart' />
             : <img src='https://www.flaticon.com/svg/static/icons/svg/1077/1077035.svg' height='20px' width='20px' alt='heart' />
@@ -74,4 +78,5 @@ const ViewProfileInfo = (props) => {
     </div>
   )
 }
+
 export default ViewProfileInfo;

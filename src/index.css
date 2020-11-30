@@ -10007,4 +10007,16 @@ label {
   line-height: 48px;
 }
 
+.quote {
+  max-width: 50%;
+  display: inline-flex;
+  align-items: center;
+  font-family: "Courgette", cursive;
+}
+
+.about-page {
+  width: 50%;
+  display: inline-block;
+}
+
 /*# sourceMappingURL=index.css.map */
