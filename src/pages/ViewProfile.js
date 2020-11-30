@@ -36,7 +36,7 @@ const ViewProfileInfo = (props) => {
     <div className="profile-container">
       <ViewProfile displayName={ displayName } age={ age } city={ city } 
       state={ geoState } image={ image } currentUser={ props.currentUser } 
-      targetProfile={ props.match.params.id } viewProfile={ viewProfile } />
+      targetProfile={ props.match.params.id }  />
       <AboutMe aboutMe={ aboutMe } />
     </div>
   )

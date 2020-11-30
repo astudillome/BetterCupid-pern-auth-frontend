@@ -36,21 +36,33 @@
 ![ERD](BetterCupid-pern-auth-frontend/public/images/ERD.png)
 
 ## Code Snipets
-![code](public/images/code1.png)
+![code]()
 
-![code](public/images/code2.png)
+![code]()
 
-![code](public/images/code3.png)
+![code]()
 
 ## App
-![app](public/images/app1.png)
+![app]()
 
-![app](public/images/app2.png)
+![app]()
 
-![app](public/images/app3.png)
+![app]()
 
 ## Technology Utilized
 * React
-* Expres
+* Express
 * Node.js
 * Git and Github
+* Postgres
+* Sequelize
+* Passport.js
+* Bcrypt
+* Draw.io
+* CORS
+
+## Technical Resources
+* Stackoverflow
+* React Documentation
+* Sequelize Documentation
+* [Booleans and React Hooks](https://stackblitz.com/edit/react-boolean-hook-2?file=BasicBooleanState.js)
