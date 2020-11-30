@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import UserInfo from '../components/UserInfo';
 import ViewProfile from '../components/ViewProfile';
 import AboutMe from '../components/AboutMe';
 import ProfileModel from '../models/profile';
@@ -17,7 +16,6 @@ const ViewProfileInfo = (props) => {
   const viewProfile = () => {
     // extract the user id
     ProfileModel.viewProfile(props.match.params.id).then((data) => { 
-      console.log(data.profile)
       setDisplayName(data.profile.display_name);
       setAge(data.profile.age);
       setCity(data.profile.city);

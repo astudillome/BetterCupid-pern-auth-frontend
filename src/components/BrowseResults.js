@@ -4,10 +4,20 @@ import { Link } from 'react-router-dom'
 import Router from 'react-router-dom'
 
 const BrowseResults = (props) => {
+  const useImage = () => {
+    if (props.image === null || props.image === undefined) {
+      return false;
+    } 
+      return true
+  }
+
   return (
     <div className="card flex-row flex-wrap user-info">
       <div className="card-header border-0">
-        <img src={props.image} height='180px' width='180px' alt='user icon' />
+      {useImage()
+          ? <img src={props.image} height='180px' width='180px' alt='image' />
+          : <img src='https://i.imgur.com/4Zx85np.png' height='180px' width='180px' alt='user icon' />
+        }
       </div>
       <div className="card-block info-card-text">
         <h4 className="card-title">{props.displayName}</h4>

@@ -32,7 +32,7 @@ const Profile = (props) => {
     fetchProfile()
   }, []);
  
-console.log(displayName)
+
   return (
     <div className="profile-container">
       <UserInfo displayName={displayName} age={age} city={city} state={state} image={image} />
