@@ -9,11 +9,13 @@ const ProfilesList = (props) => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [userId, setUserId] = useState('');
+  const [image, setImage] = useState('');
   
   let displayNames = []
   let cities = []
   let states = []
   let userIds = []
+  let images = []
   
   const fetchProfiles = () => {
     ProfileModel.getAllProfiles().then(data => {
@@ -24,11 +26,13 @@ const ProfilesList = (props) => {
         cities.push(data.profiles[i].city)
         states.push(data.profiles[i].state)
         userIds.push(data.profiles[i].userId)
+        images.push(data.profiles[i].image)
       }
       setDisplayName(displayNames);
       setCity(cities);
       setState(states);
       setUserId(userIds);
+      setImage(images)
       console.log(data.profiles);
     })
   }
@@ -42,11 +46,11 @@ const ProfilesList = (props) => {
     <div className="profile-container">
     {/* create a for loop to dynamically render a different number of BrowseResults
     components depending on how many users exist in the database */}
-      <BrowseResults displayName={ displayName[0] } city={ city[0] } 
+      <BrowseResults displayName={ displayName[0] } image={ image[0] }city={ city[0] } 
       state={ state[0] } userId={ userId[0] } />
-      <BrowseResults displayName={ displayName[1] } city={ city[1] } 
+      <BrowseResults displayName={ displayName[1] } image={ image[1] } city={ city[1] } 
       state={ state[1] } userId={ userId[1] } />
-      <BrowseResults displayName={ displayName[2] } city={ city[2] } 
+      <BrowseResults displayName={ displayName[2] } image={ image[2] } city={ city[2] } 
       state={ state[2] } userId={ userId[2] } />
     </div>
   );
