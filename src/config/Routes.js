@@ -1,6 +1,5 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-
 import Home from '../pages/Home'
 import About from '../pages/About'
 import Matches from '../pages/Matches'
@@ -20,14 +19,20 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Routes = (props) => (
-  
+
   <Switch>
     <Route exact path='/' component={Home} />
+
     <Route path='/about' component={About} />
+
     <PrivateRoute path='/matches' component={Matches} currentUser={props.currentUser} />
+
     <Route path='/browse' component={Browse} />
+
     <Route path='/register' component={Register} />
+
     <PrivateRoute path='/profile/edit' component={EditProfile} currentUser={props.currentUser} />
+
     <Route path='/login' render={(routeComponentProps) => {
       return <Login
         {...routeComponentProps}
@@ -38,13 +43,12 @@ const Routes = (props) => (
     }} />
 
 
-    <PrivateRoute path='/profile/:id' component={ViewProfile} currentUser={props.currentUser}  
+    <PrivateRoute path='/profile/:id' component={ViewProfile} currentUser={props.currentUser}
     />
-    
+
     <PrivateRoute path='/profile' component={Profile} currentUser={props.currentUser} />
 
     <Route path='/browse' component={Browse} />
-    {/* // need another route for a passed in user */}
   </Switch>
 )
 

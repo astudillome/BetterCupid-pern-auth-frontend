@@ -4,7 +4,6 @@ import Footer from './components/Footer'
 import Routes from './config/Routes'
 import './App.css'
 import UserModel from './models/user'
-import Browse from './pages/Browse'
 
 
 function App() {
@@ -12,7 +11,7 @@ function App() {
 
   const storeUser = (userId) => {
     localStorage.setItem('id', userId)
-    setCurrentUser( userId )
+    setCurrentUser(userId)
   }
 
   const logout = (event) => {
@@ -28,13 +27,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header 
-        currentUser={ currentUser } 
-        logout={ logout }
+      <Header
+        currentUser={currentUser}
+        logout={logout}
       />
-      <Routes 
-        currentUser={ currentUser }
-        storeUser={ storeUser }
+      <Routes
+        currentUser={currentUser}
+        storeUser={storeUser}
       />
       <Footer />
     </div>

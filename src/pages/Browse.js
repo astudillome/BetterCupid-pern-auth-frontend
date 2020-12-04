@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import BrowseResults from '../components/BrowseResults';
 import ProfileModel from '../models/profile';
 
+// gets data to send as props to browse results component
 const ProfilesList = (props) => {
-  const [profiles, setProfiles] = useState([]);
   const [displayName, setDisplayName] = useState('');
-  const [age, setAge] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [userId, setUserId] = useState('');
@@ -33,10 +32,8 @@ const ProfilesList = (props) => {
       setState(states);
       setUserId(userIds);
       setImage(images)
-      console.log(data.profiles);
     })
   }
-  console.log('The userIds: ' + userId);
 
   useEffect(() => {
     fetchProfiles()
@@ -44,8 +41,6 @@ const ProfilesList = (props) => {
   
   return (
     <div className="profile-container">
-    {/* create a for loop to dynamically render a different number of BrowseResults
-    components depending on how many users exist in the database */}
       <BrowseResults displayName={ displayName[0] } city={ city[0] } 
       state={ state[0] } userId={ userId[0] } image={ image[0] } />
       <BrowseResults displayName={ displayName[1] } city={ city[1] } 
