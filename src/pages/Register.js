@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import UserModel from '../models/user'
-// import ReCaptcha from 'react-google-recaptcha'
 
 const Register = props => {
   const [name, setName] = useState('');
@@ -8,8 +7,6 @@ const Register = props => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [birthday, setBirthday] = useState('');
-  const [message, setMessage] = useState('')
-  // const reRef = userRef<ReCaptcha>();
 
   const handleName = e => {
     setName(e.target.value)
@@ -42,12 +39,6 @@ const Register = props => {
         })
     }
 
-    // <ReCaptcha siteKey={process.env.NEXT_PUBLIC_captchaKey}
-    // size="invisible"
-    // ref={reRef}
-    // />
-
-    // const token = await reRef.current.executeAsync();
   }
   return (
     <div className="register-form card">

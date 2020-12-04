@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProfileModel from '../models/profile';
-// check to make sure that on submit an empty field does not erase previous contents
-// remove /editprofile/:id route so users can't edit another user's profile?
+
 const EditProfile = (props) => {
   const [profile, setProfile] = useState({})
   
@@ -10,7 +9,6 @@ const EditProfile = (props) => {
       if (data) {
         setProfile(data)
       } 
-      // viewProfile()
     })
   }
 
@@ -18,7 +16,6 @@ const EditProfile = (props) => {
     fetchProfile()
   }, [])
 
-  //creates a new object w all KV pairs in profile
   const handleUpdate = e => {
     setProfile({
       ...profile,

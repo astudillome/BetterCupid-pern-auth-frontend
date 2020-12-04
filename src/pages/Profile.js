@@ -3,10 +3,7 @@ import UserInfo from '../components/UserInfo';
 import AboutMe from '../components/AboutMe';
 import ProfileModel from '../models/profile';
 
-
-// next steps passing props into user info component
-// do a call to the user table within profile controller
-// do another const fetch user in addition to fetchProfile
+// Gets info for userInfo and aboutMe components
 const Profile = (props) => {
   const [displayName, setDisplayName] = useState("");
   const [age, setAge] = useState("");
@@ -15,8 +12,6 @@ const Profile = (props) => {
   const [image, setImage] = useState("");
   const [aboutMe, setAboutMe] = useState("");
   
-  // const [state, setState] = useState("");
-
   const fetchProfile = () => {
     ProfileModel.getOwnProfile().then(data => {
       if (!data) {
@@ -44,6 +39,5 @@ console.log(displayName)
     </div>
   )
 }
-
 
 export default Profile;
