@@ -3,6 +3,7 @@ import ViewProfile from '../components/ViewProfile';
 import AboutMe from '../components/AboutMe';
 import ProfileModel from '../models/profile';
 
+// Gets details to view profile of a non-logged in user
 const ViewProfileInfo = (props) => {
   const [displayName, setDisplayName] = useState("");
   const [age, setAge] = useState("");
@@ -11,10 +12,7 @@ const ViewProfileInfo = (props) => {
   const [image, setImage] = useState("");
   const [aboutMe, setAboutMe] = useState("");
  
-  // console.log(props)
-
   const viewProfile = () => {
-    // extract the user id
     ProfileModel.viewProfile(props.match.params.id).then((data) => { 
       setDisplayName(data.profile.display_name);
       setAge(data.profile.age);
@@ -28,7 +26,6 @@ const ViewProfileInfo = (props) => {
   useEffect(() => {
     viewProfile()
   }, []);
-  // should targetProfile be data.profile.userId?
   
   return (
     <div className="profile-container">
@@ -39,6 +36,5 @@ const ViewProfileInfo = (props) => {
     </div>
   )
 }
-
 
 export default ViewProfileInfo;

@@ -66,3 +66,6 @@
 * React Documentation
 * Sequelize Documentation
 * [Booleans and React Hooks](https://stackblitz.com/edit/react-boolean-hook-2?file=BasicBooleanState.js)
+
+## Back-End Repo
+* [BetterCupid Back-End](https://github.com/astudillome/BetterCupid-pern-auth-backend)

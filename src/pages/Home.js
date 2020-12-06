@@ -1,5 +1,6 @@
 import React from 'react';
 
+// renders a quote on the home page
 const Home = () => {
   const quotes = [
     "I hate to see you go, I love to watch you leave. - John Travolta",

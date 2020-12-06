@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Match from '../components/Match';
-import ProfileModel from '../models/profile';
 import RelationshipModel from '../models/relationship';
 
+// Gets matches based on like status and sends props to match in components
 const Matches = (props) => {
   const [matches, setMatches] = useState([]);
 
@@ -10,7 +10,6 @@ const Matches = (props) => {
     RelationshipModel.findMatches()
     .then((allMatches) => {
       setMatches(allMatches)
-      console.log(JSON.stringify(allMatches))
     })
   }
 
